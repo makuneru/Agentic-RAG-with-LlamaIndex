@@ -1,0 +1,15 @@
+# Core dependencies for Agentic RAG System with LlamaIndex
+
+# Environment management
+python-dotenv==1.0.0
+
+# LlamaIndex core and components
+llama-index==0.10.27
+llama-index-llms-openai==0.1.15
+llama-index-embeddings-openai==0.1.7
+
+# Jupyter notebook support (optional, for running notebooks)
+jupyter>=1.0.0
+ipykernel>=6.0.0
+nest-asyncio>=1.5.0
+
