@@ -5,7 +5,8 @@ Creates function calling agents with reasoning capabilities for document queryin
 """
 
 from llama_index.llms.openai import OpenAI
-from llama_index.core.agent import FunctionCallingAgentWorker, AgentRunner
+from llama_index.core.agent import AgentRunner
+from llama_index.agent.openai import OpenAIAgentWorker
 from llama_index.core.tools import FunctionTool, QueryEngineTool
 from typing import List, Optional
 
@@ -40,8 +41,8 @@ def create_function_calling_agent(
     # Initialize LLM if not provided
     llm = llm or OpenAI(model="gpt-3.5-turbo", temperature=temperature)
     
-    # Create agent worker
-    agent_worker = FunctionCallingAgentWorker.from_tools(
+    # Create agent worker (updated for LlamaIndex 0.11+)
+    agent_worker = OpenAIAgentWorker.from_tools(
         tools, 
         llm=llm, 
         verbose=verbose
